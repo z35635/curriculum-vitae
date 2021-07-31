@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>移动端-个人简历</title>
+
+    <link rel="stylesheet" href="css/index.min.css">
+    <script>
+        ~function () {
+            //window.orientation只在移动端生效
+            let event = 'onorientationchange' in window ? 'orientationchange' : 'resize';
+            function computeREM() {
+                let HTML = document.documentElement,
+                    deviceW = HTML.clientWidth,
+                    designW = 750,
+                    ratio = deviceW / designW * 100;
+                if (deviceW >= designW) return;
+                HTML.style.fontSize = ratio + 'px';
+            }
+            computeREM();
+            // 屏幕旋转时重新计算
+            window.addEventListener(event, computeREM);
+        }()
+    </script>
+    <!-- 处理CSS3兼容问题 -->
+    <script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <main class="container">
+        <!-- 魔方区域 -->
+        <section class="cubeBox">
+            <ul class="cube">
+                <li><img src="images/cube1.png" alt="cube1"></li>
+                <li><img src="images/cube2.png" alt="cube2"></li>
+                <li><img src="images/cube3.png" alt="cube3"></li>
+                <li><img src="images/cube4.png" alt="cube4"></li>
+                <li><img src="images/cube5.png" alt="cube5"></li>
+                <li><img src="images/cube6.png" alt="cube6"></li>
+            </ul>
+        </section>
+
+        <!-- 滑屏区域 -->
+        <section class="swiperBox">
+            <a href="javascript:;" class="returnBox"></a>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- 基本信息 -->
+                    <div class="swiper-slide page1">
+                        <dl class="baseInfo">
+                            <dt>基本信息</dt>
+                            <dd><em>01</em>
+                                <p>姓名：朱琳</p>
+                            </dd>
+                            <dd><em>02</em>
+                                <p>性别：女</p>
+                            </dd>
+                            <dd><em>03</em>
+                                <p>年龄：24</p>
+                            </dd>
+                            <dd><em>04</em>
+                                <p>电话：18843019552</p>
+                            </dd>
+                            <dd><em>05</em>
+                                <p>邮箱：linzhujlu@foxmail.com</p>
+                            </dd>
+                            <dd><em>06</em>
+                                <p>学校：吉林大学</p>
+                            </dd>
+                            <dd><em>07</em>
+                                <p>学历：硕士研究生在读</p>
+                            </dd>
+                            <dd><em>08</em>
+                                <p>专业：计算机技术</p>
+                            </dd>
+                            <dd><em>9</em>
+                                <p>求职意向：前端开发工程师</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 专业成绩 -->
+                    <div class="swiper-slide page2">
+                        <section class="main">
+                            <dl class=".undergraduate">
+                                <dt>本科阶段</dt>
+                                <dd><em>·</em>
+                                    <p>学校：吉林大学</p>
+                                </dd>
+                                <dd><em>·</em>
+                                    <p>专业成绩：42/336</p>
+                                </dd>
+                                <dd><em>·</em>
+                                    <p>专业：计算机科学与技术</p>
+                                </dd>
+                                <dd><em>·</em>
+                                    <p>奖励情况：各学年度奖学金，大四保研</p>
+                                </dd>
+                            </dl>
+                            <dl class=".master">
+                                <dt>硕士阶段</dt>
+                                <dd><em>·</em>
+                                    <p>学校：吉林大学</p>
+                                </dd>
+                                <dd><em>·</em>
+                                    <p>专业成绩：10/98</p>
+                                </dd>
+                                <dd><em>·</em>
+                                    <p>研究方向：虹膜识别</p>
+                                </dd>
+                                <dd><em>·</em>
+                                    <p>奖励情况：新生奖学金、优秀奖学金等</p>
+                                </dd>
+                            </dl>
+                        </section>
+                    </div>
+                    <!-- 前端之路 -->
+                    <div class="swiper-slide page3">
+                        <h3>Keeping going</h3>
+                        <ul class="gradeBox">
+                            <li>
+                                <p>2018.3</p><span class="icon iconfont">&#xe77d;</span>"放大镜案例"：前端启蒙
+                            </li>
+                            <li>
+                                <p>2018.6</p><span class="icon iconfont">&#xe679;</span>"银行管理系统"：首次参与团队开发
+                            </li>
+                            <li>
+                                <p>硕士期间</p><span class="icon iconfont">&#xe768;</span>插件组件封装、案例练习：深入底层原理
+                            </li>
+                            <li>
+                                <p>2021.6</p><span class="icon iconfont">&#xe626;</span>CRM v1.0：基于iframe的伪SPA
+                            </li>
+                            <li>
+                                <p>2021.7</p><span class="icon iconfont">&#xe6ee;</span>CRM v2.0：基于vue-router的SPA
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 项目经历 -->
+                    <div class="swiper-slide page4">
+                        <img src="images/project.png" class="title" alt="project">
+                        <ul class="main">
+                            <li>
+                                <p class="leftIn">2021.7&nbsp;CRM客户关系管理2.0</p>
+                                <p class="rightIn"><span class="icon iconfont">&#xe6ee;</span>技术栈：Element-UI + vue2.x
+                                </p>
+                            </li>
+                            <li>
+                                <p class="leftIn">2021.6&nbsp;CRM客户关系管理1.0</p>
+                                <p class="rightIn"><span class="icon iconfont">&#xe626;</span>技术栈：jQuery + Axios +
+                                    Node.js</p>
+                            </li>
+                            <li>
+                                <p class="leftIn">2018.6&nbsp;"银行管理系统"</p>
+                                <p class="rightIn"><span class="icon iconfont">&#xe679;</span>技术栈：jQuery + Ajax</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 科研成果 -->
+                    <div class="swiper-slide page5">
+                        <h3>EnhanceDeepIris:一种基于生成模型提升训练的深度学习虹膜识别方法</h3>
+                        <ul class="info">
+                            <li> <strong>关键词</strong>：深度学习，虹膜识别，数据增强</li>
+                            <li> <strong>级别</strong>：EI期刊</li>
+                            <li> <strong>状态</strong>：录用</li>
+                            <li> <strong>预计发表时间</strong>：2021.09</li>
+                            <li><strong>简介</strong>：提出了一种深度虹膜分类模型EnhanceDeepIris，它基于生成模型和辅助训练方法，对已经收敛的虹膜分类网络进行二次训练，从而得到泛化能力更好的分类网络。</li>
+                        </ul>
+                    </div>
+                    <!-- 工作经历：无 -->
+                    <div class="swiper-slide page6">
+                        <p class="thanks">Congratulation for come here!</p>
+                        <h3>工作经历</h3>
+                        <img src="images/loading.png" class="loading" alt="loading">
+                        <div class="wait">等待扩充...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 音乐区域 -->
+        <section class="musicBox">
+            <audio class="musicAudio" src="audio/2R - Shining Friends.mp3" loop preload="none"></audio>
+            <a href="javascript:;" class="musicIcon"></a>
+        </section>
+    </main>
+
+    <!-- IMPORT JS -->
+    <script src="js/zepto.minall.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/makisu.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
